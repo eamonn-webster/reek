@@ -56,7 +56,7 @@ module Reek
       def self.default_parser
         Parser::CurrentRuby.new(AST::Builder.new).tap do |parser|
           diagnostics = parser.diagnostics
-          diagnostics.all_errors_are_fatal = true
+          diagnostics.all_errors_are_fatal = false
           diagnostics.ignore_warnings      = true
         end
       end
